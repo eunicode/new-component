@@ -64,6 +64,7 @@ const modulePath = `${componentDir}/${componentName}.module.css`;
 
 // Our index template is super straightforward, so we'll just inline it for now.
 const indexTemplate = prettify(`\
+export * from './${componentName}';
 export { default } from './${componentName}';
 `);
 
