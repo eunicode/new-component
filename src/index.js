@@ -58,7 +58,7 @@ const templatePath = `./templates/${program.type}.js`;
 
 // Get all of our file paths worked out, for the user's project.
 const componentDir = `${program.dir}/${componentName}`;
-const filePath = `${componentDir}/${componentName}.tsx`;
+const filePath = `${componentDir}/${componentName}.${program.extension}x`;
 const indexPath = `${componentDir}/index.${program.extension}`;
 const modulePath = `${componentDir}/${componentName}.module.css`;
 
