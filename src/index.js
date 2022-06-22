@@ -60,6 +60,7 @@ const templatePath = `./templates/${program.type}.js`;
 const componentDir = `${program.dir}/${componentName}`;
 const filePath = `${componentDir}/${componentName}.${program.extension}`;
 const indexPath = `${componentDir}/index.${program.extension}`;
+const modulePath = `${componentDir}/${componentName}.module.css`;
 
 // Our index template is super straightforward, so we'll just inline it for now.
 const indexTemplate = prettify(`\
@@ -120,6 +121,14 @@ mkDirPromise(componentDir)
   )
   .then((template) => {
     logItemCompletion('Index file built and saved to disk.');
+    return template;
+  })
+  // Add CSS modules file
+  .then((template) =>
+    writeFilePromise(modulePath)
+  )
+  .then((template) => {
+    logItemCompletion('CSS Module file built and saved to disk.');
     return template;
   })
   .then((template) => {
