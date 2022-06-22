@@ -30,9 +30,9 @@ module.exports.getConfig = () => {
   const currentPath = process.cwd();
 
   const defaults = {
-    type: 'functional',
-    dir: 'src/components',
-    extension: 'js',
+    type: 'const',
+    dir: 'components',
+    extension: 'ts',
   };
 
   const globalOverrides = requireOptional(
@@ -89,7 +89,7 @@ const colors = {
 };
 
 const logComponentType = (selected) =>
-  ['class', 'pure-class', 'functional']
+  ['class', 'pure-class', 'functional', 'const']
     .sort((a, b) => (a === selected ? -1 : 1))
     .map((option) =>
       option === selected

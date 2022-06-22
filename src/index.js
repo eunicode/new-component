@@ -35,8 +35,8 @@ program
   .arguments('<componentName>')
   .option(
     '-t, --type <componentType>',
-    'Type of React component to generate (default: "functional")',
-    /^(class|pure-class|functional)$/i,
+    'Type of React component to generate (default: "const")',
+    /^(class|pure-class|functional|const)$/i,
     config.type
   )
   .option(
@@ -46,7 +46,7 @@ program
   )
   .option(
     '-x, --extension <fileExtension>',
-    'Which file extension to use for the component (default: "js")',
+    'Which file extension to use for the component (default: "ts")',
     config.extension
   )
   .parse(process.argv);
@@ -58,7 +58,7 @@ const templatePath = `./templates/${program.type}.js`;
 
 // Get all of our file paths worked out, for the user's project.
 const componentDir = `${program.dir}/${componentName}`;
-const filePath = `${componentDir}/${componentName}.${program.extension}`;
+const filePath = `${componentDir}/${componentName}.tsx`;
 const indexPath = `${componentDir}/index.${program.extension}`;
 const modulePath = `${componentDir}/${componentName}.module.css`;
 
@@ -115,7 +115,7 @@ mkDirPromise(componentDir)
     return template;
   })
   .then((template) =>
-    // We also need the `index.js` file, which allows easy importing.
+    // We also need the `index.ts` file, which allows easy importing.
     writeFilePromise(indexPath, prettify(indexTemplate))
   )
   .then((template) => {

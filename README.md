@@ -90,6 +90,7 @@ Control the type of component created:
 - `functional` for a stateless functional component (default).
 - `class` for a traditional Component class,
 - `pure-class` for a PureComponent class,
+- `const` for a stateless functional component `const` declaration statement
 
 Legacy `createClass` components are not supported.
 
