@@ -125,7 +125,7 @@ mkDirPromise(componentDir)
   })
   // Add CSS modules file
   .then((template) =>
-    writeFilePromise(modulePath)
+    writeFilePromise(modulePath, '')
   )
   .then((template) => {
     logItemCompletion('CSS Module file built and saved to disk.');
