@@ -1,3 +1,26 @@
+## Develop
+
+To develop, read original readme's instructions. To test changes, push your commits, and re-install the new-component package in your test project. Then test the commands.
+
+## Use 
+
+You can install this tool globally, or to use it locally, install this github repo as a dev dependency in your project.
+```
+yarn add https://github.com/expertise-com/new-component.git --dev
+```
+
+In the project you want to use this tool, add this to your package.json
+```
+"scripts": {
+  "nc": "new-component"
+}
+```
+Using this command `yarn nc <ComponentName>` will generate a ComponentName folder, ComponentName.tsx, ComponentName.modules.css and index.ts in the components folder.
+
+In the project you want to use this tool, add a .new-component-config.json file to configure the path destination and other settings. Look at the original readme for more information.
+
+---
+
 <p align="center">
   <img src="https://github.com/joshwcomeau/new-component/blob/master/docs/logo@2x.png?raw=true" width="285" height="285" alt="new-component logo">
   <br>
