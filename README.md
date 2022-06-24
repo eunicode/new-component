@@ -1,3 +1,8 @@
+# About
+
+- Adds the ability to generate Typescript components
+- Adds a template that generates a const function component expression
+
 ## Develop
 
 To develop, read original readme's instructions. To test changes, push your commits, and re-install the new-component package in your test project. Then test the commands.
